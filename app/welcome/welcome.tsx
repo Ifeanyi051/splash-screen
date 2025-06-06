@@ -39,7 +39,6 @@ export function Welcome() {
 
       <div>
         <h1>Welcome</h1>
-           <p>nmbjhbvhjb</p>
       </div>
 
 
