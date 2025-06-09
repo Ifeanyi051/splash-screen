@@ -27,6 +27,8 @@ export function Welcome() {
   const windowOne = useRef(null);
   const windowTwo = useRef(null);
   const windowWelcome = useRef(null);
+  const windowCover = useRef(null);
+  
 
   useEffect(() => {
 
@@ -63,12 +65,25 @@ export function Welcome() {
       delay: 1
     });
 
+    gsap.to(windowCover.current, {
+      duration: 1,
+      scale: 5,
+      opacity: 1,
+      delay: 2.5
+    });
+
 
   }, []);
 
   return (
     <main className="overflow-hidden h-screen w-screen relative bg-[white]">
-      <div className="overflow-hidden h-full w-full relative">
+
+      <div className='h-full w-full hidden sm:block'>
+        <div className='h-full w-full flex justify-center items-center'>
+          <h1 className='text-[#884DD4] text-[36px] font-bold'>View with a mobile device</h1>
+        </div>
+      </div>
+      <div className="overflow-hidden h-full w-full relative block sm:hidden">
         <img
           src="Rectangle33.svg"
           alt=""
@@ -78,12 +93,12 @@ export function Welcome() {
         <img
           src="Rectangle34.svg"
           alt=""
-          className="h-[120vh] min-w-[150vw] absolute right-[-55vw] top-[-60px] scale-125"
+          className="h-[120vh] min-w-[150vw] absolute right-[-55vw] translate-x-[-50px] top-[-60px] scale-125"
           ref={windowTwo}
         />
         <div className='flex justify-center items-center h-full w-full'>
           <h1 ref={windowWelcome} className='text-[36px] font-bold text-[#884DD4] scale-50 opacity-0'>Welcome</h1>
-          <div className='bg-[red] min-h-[300px] min-w-[300px] absolute opacity-25 rounded-full scale-500'>
+          <div ref={windowCover} className='bg-[#884DD4] min-h-[300px] min-w-[300px] absolute opacity-0 scale-50 rounded-full'>
             
           </div>
         </div>
