@@ -49,27 +49,27 @@ export function Welcome() {
     gsap.to(windowOne.current, {
       duration: 1,
       x: -500,
-      delay: 1
+      delay: 1.5
     });
 
     gsap.to(windowTwo.current, {
       duration: 1,
       x: 500,
-      delay: 1
+      delay: 1.5
     });
 
     gsap.to(windowWelcome.current, {
       duration: 1,
-      scale: 1,
+      scale: 1.2,
       opacity: 1,
-      delay: 1
+      delay: 1.5
     });
 
     gsap.to(windowCover.current, {
       duration: 1,
       scale: 5,
       opacity: 1,
-      delay: 2.5
+      delay: 3
     });
 
 
@@ -98,7 +98,7 @@ export function Welcome() {
         />
         <div className='flex justify-center items-center h-full w-full'>
           <h1 ref={windowWelcome} className='text-[36px] font-bold text-[#884DD4] scale-50 opacity-0'>Welcome</h1>
-          <div ref={windowCover} className='bg-[#884DD4] min-h-[300px] min-w-[300px] absolute opacity-0 scale-50 rounded-full'>
+          <div ref={windowCover} className='bg-[#884DD4] min-h-[300px] min-w-[300px] absolute scale-0 rounded-full'>
             
           </div>
         </div>
