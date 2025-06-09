@@ -20,8 +20,27 @@
 // }
 
 
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 
 export function Welcome() {
+  const windowOne = useRef(null);
+  const windowTwo = useRef(null);
+
+  useEffect(() => {
+    gsap.to(windowOne.current, {
+      duration: 1,
+      x: -500,
+    });
+
+    gsap.to(windowTwo.current, {
+      duration: 1,
+      x: 500,
+    });
+
+
+  }, []);
+
   return (
     <main className="overflow-hidden h-screen w-screen relative">
       <div className="overflow-hidden h-full w-full relative">
@@ -29,22 +48,19 @@ export function Welcome() {
           src="Rectangle33.svg"
           alt=""
           className="h-[150vh] w-[150vw] absolute left-[-45vw] top-0 z-[2] rotate-[25deg] scale-125"
+          ref={windowOne}
         />
         <img
           src="Rectangle34.svg"
           alt=""
           className="h-[150vh] w-[150vw] absolute right-[-55vw] top-0 rotate-[25deg] translate-x-[-150px] scale-125"
+          ref={windowTwo}
         />
       </div>
 
       <div>
         <h1>Welcome</h1>
       </div>
-
-
-    </main> 
+    </main>
   );
 }
-
-
-
